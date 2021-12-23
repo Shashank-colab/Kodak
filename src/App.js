@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React, { useRef, useState } from "react";
+import { Canvas, useFrame } from "react-three-fiber";
+import * as THREE from 'three';
 import './App.css';
 
+var clock = new THREE.Clock();
+var scene = new THREE.Scene();
+
+  const geometry = new THREE.BoxGeometry(0.1, 1, 4);
+  const material = new THREE.MeshBasicMaterial({ color: 0x00ffff });
+  const cube = new THREE.Mesh(geometry, material);
+  cube.position.x = x;
+  cube.position.y = y;
+  cube.position.z = z;
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  return (<>
+  <canvas>
+    "hi"
+    <cube />
+  </canvas>
+  </>
+  )
+};
 
 export default App;
